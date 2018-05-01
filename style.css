@@ -13,6 +13,15 @@ path:hover {
   stroke-linejoin: round;
 }
 
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
 /* The next 3 styles came from https://bl.ocks.org/mbostock/3885304 */
 .bar {
   fill: steelblue;
