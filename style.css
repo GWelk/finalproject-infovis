@@ -24,7 +24,12 @@ path:hover {
 
 /* The next 3 styles came from https://bl.ocks.org/mbostock/3885304 */
 .bar {
-  fill: steelblue;
+  /* fill: steelblue; */
+  display: inline-block;
+  width: 20px;
+  height: 75px;
+  background-color: teal;
+  margin-right: 2px
 }
 
 .bar:hover {
