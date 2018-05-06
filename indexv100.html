@@ -5,14 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- This template was taken from w3schools.com: https://www.w3schools.com/w3css/w3css_templates.asp -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- in-line style sheet is included here - so that testbar.js will work properly -->
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1,h2,h3,h4,h5,h6 {
     font-family: "Playfair Display";
     letter-spacing: 5px;
 }
+/* body {
+  font: 10px sans-serif;
+} */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: orangered ;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
 </style>
-<script src="//d3js.org/d3.v4.min.js"></script>
+
+<!-- Three .js libraries are included: 1) d3 so that the d3 code works -->
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<!-- Three .js libraries are included: 2) labratrevenge so that the tooltips work -->
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<!-- Three .js libraries are included: 3) testbar10.js which was created by me (GW) so that my bar graph works -->
+<script src="DeathBarGraph.js"></script>
+
 
 <body>
 
@@ -31,10 +91,6 @@ h1,h2,h3,h4,h5,h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <!-- <img class="w3-image" src="/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
-  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
-    <h1 class="w3-xxlarge">Le Catering</h1>
-  </div> -->
 </header>
 
 <!-- Page content -->
@@ -49,7 +105,7 @@ h1,h2,h3,h4,h5,h6 {
     </div>
 
     <div class="w3-col l6 w3-padding-large">
-      <!-- add image here -->
+      <!-- add image here.  The <br>'s are for spacing. The  image included is a syring and vial-->
       <br>
       <br>
       <br>
@@ -63,8 +119,10 @@ h1,h2,h3,h4,h5,h6 {
 
   <!-- "Deaths" Section -->
   <div class="w3-row w3-padding-64" id="dth">
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
-     <img src="BarGraph2017DeathsbyVax.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    <div class="w3-col m6 w3-padding-large w3-hide-small" id="dth2">
+     <!-- PUT THE D3 Graph here -->
+     <!-- Since I can't get the D3 graph to work, I am inserting the image and linking to the graph -->
+     <a href="DeathGraphD3.html"><img src="BarGraph2017DeathsbyVax.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750"></a>
     </div>
 
     <div class="w3-col m6 w3-padding-large">
@@ -85,7 +143,11 @@ h1,h2,h3,h4,h5,h6 {
     </div>
 
     <div class="w3-col l6 w3-padding-large">
+      <!-- PUT THE D3 Graph here -->
+      <!-- Since I can't get the D3 graph to work, I am inserting the image and linking to the graph -->
+      <a href="InjuredGraphD3.html">
       <img src="BarGraph2017injuriesbyvax.png" class="w3-round w3-image w3-opacity-min" alt="BarGraph" style="width:100%">
+      </a>
     </div>
   </div>
 
@@ -156,7 +218,6 @@ h1,h2,h3,h4,h5,h6 {
 
 <!-- End page content -->
 </div>
-
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>

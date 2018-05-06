@@ -7,14 +7,6 @@ var deathlist = d3.csv("VaxDeaths2017.csv", function(error, data){
       console.log(data);
     });
 
-var key = function(d){
-      return d.Vaccine;
-    };
-var value =  function(d){
-      return d.Deaths2017;
-    };
-
-console.log(key);
 
 // First, we will create some constants to define non-data-related parts of the visualization
 var w = 700; // Width of our visualization ; was 700
